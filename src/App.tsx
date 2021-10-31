@@ -3,7 +3,7 @@ import {Switch, Route} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import {ProtectedRoute} from '@utils/ProtectedRoute';
 import {verifyToken} from '@store/thunks/user';
-import {UserRole} from 'shared/entities/User';
+import {UserRole} from './shared/entities/User';
 import {AuthPage} from './pages/Auth/AuthPage';
 import {CataloguePage} from './pages/Catalogue/CataloguePage';
 import {SubcataloguePage} from './pages/Subcatalogue/SubcataloguePage';

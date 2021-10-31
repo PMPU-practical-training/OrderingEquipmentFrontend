@@ -7,15 +7,15 @@ const Button_1 = (0, tslib_1.__importStar)(require("@ui/Button/Button"));
 const react_redux_1 = require("react-redux");
 const user_1 = require("@store/slices/user");
 const catalogue_1 = require("@store/slices/catalogue");
+const react_router_dom_1 = require("react-router-dom");
 const CategoryMap_1 = require("./partials/CategoryMap/CategoryMap");
 const Sidebar_1 = require("./partials/Sidebar/Sidebar");
 const CatalogueMenu_scss_1 = (0, tslib_1.__importDefault)(require("./CatalogueMenu.scss"));
 const User_1 = require("shared/entities/User");
-const react_router_dom_1 = require("react-router-dom");
 const CatalogueMenu = () => {
     const dispatch = (0, react_redux_1.useDispatch)();
     const history = (0, react_router_dom_1.useHistory)();
-    const { loading, groups, currentGroup, error } = (0, react_redux_1.useSelector)((state) => state.catalogue);
+    const { loading, groups, currentGroup } = (0, react_redux_1.useSelector)((state) => state.catalogue);
     const { role } = (0, react_redux_1.useSelector)((state) => state.user.data);
     const setCurrentGroup = (group) => {
         dispatch(catalogue_1.catalogueSlice.actions.setCurrentGroup(group));

@@ -9,15 +9,12 @@ const react_router_dom_1 = require("react-router-dom");
 const Input_1 = require("@ui/Input/Input");
 const Button_1 = (0, tslib_1.__importStar)(require("@ui/Button/Button"));
 const OrderMeta_1 = require("@components/OrderMeta/OrderMeta");
+const Specification_1 = require("../../shared/entities/Specification");
 const Cart_scss_1 = (0, tslib_1.__importDefault)(require("./Cart.scss"));
-const Specification_1 = require("shared/entities/Specification");
 const Cart = () => {
     const { cart } = (0, react_redux_1.useSelector)((state) => state.cart);
     const [finalizeOrder, setFinalizeOrder] = react_1.default.useState(false);
     const dispatch = (0, react_redux_1.useDispatch)();
-    const deleteSelected = () => {
-    };
-    const selectProduct = () => { };
     if (!cart.length) {
         return react_1.default.createElement(react_router_dom_1.Redirect, { to: "/" });
     }
@@ -59,7 +56,10 @@ const Cart = () => {
                     product.price.rangeValue.unit),
                 react_1.default.createElement(Input_1.Input, { name: "quantity", value: quantity.toString(), type: "number", onChange: (e) => {
                         if (e.target.value && parseInt(e.target.value)) {
-                            dispatch(cart_1.cartSlice.actions.editQuantity({ productId: product.id, quantity: parseInt(e.target.value) }));
+                            dispatch(cart_1.cartSlice.actions.editQuantity({
+                                productId: product.id,
+                                quantity: parseInt(e.target.value)
+                            }));
                         }
                         else {
                             dispatch(cart_1.cartSlice.actions.editQuantity({ productId: product.id, quantity: 1 }));

@@ -32,7 +32,8 @@
       "@utils/*": ["src/utils/*"],
       "@ui/*": ["src/ui/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@components/*": ["src/components/*"]
+      "@components/*": ["src/components/*"],
+      "@shared/*": ["src/shared/*"]
     }
   }
 }
