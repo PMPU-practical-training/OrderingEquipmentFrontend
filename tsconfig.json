@@ -1,9 +1,4 @@
 {
-  "references": [
-    {
-      "path": "../shared"
-    }
-  ],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
