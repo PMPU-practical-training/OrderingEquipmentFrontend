@@ -23,6 +23,7 @@ export const Product: React.FC<ProductProps> = props => {
 
     const addToCart = () => {
         dispatch(cartSlice.actions.addToCart({product, quantity: amount}));
+        window.alert("Добавлено в карзину!\nЧтобы перейти к формированию заявки, нажмите на иконку \" странички с плюсом \"")
     };
 
     return (
