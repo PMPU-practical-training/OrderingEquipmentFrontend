@@ -28,12 +28,6 @@ export const Header = (props: HeaderProps): React.ReactElement => {
             {isInteractive && (
                 <>
                     <Button
-                        onClick={logoutUser}
-                        className={styles.Button}
-                        name="Выйти"
-                        theme={ButtonTheme.Bordo}
-                    />
-                    <Button
                         onClick={() => history.push('/')}
                         className={styles.Button}
                         name="Каталог"
@@ -53,6 +47,12 @@ export const Header = (props: HeaderProps): React.ReactElement => {
                         className={styles.Account + ' ' + styles.Icon_size}
                         theme={ButtonThemeIcn.White}
                         icon={IconName.Person}
+                    />
+                    <Button
+                        onClick={logoutUser}
+                        className={styles.ButtonLogOut}
+                        name="Выйти"
+                        theme={ButtonTheme.Bordo}
                     />
                 </>
             )}
