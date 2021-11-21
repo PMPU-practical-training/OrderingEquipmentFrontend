@@ -19,8 +19,8 @@ export const ProfilePage = (): React.ReactElement => {
         if (role && loading === LoadingStatus.Complete) {
             switch (role) {
                 case UserRole.Admin:
-                case UserRole.Editor:
                     return <EditorOrderList/>;
+                case UserRole.Editor:
                 case UserRole.Expert:
                 case UserRole.Purchaser:
                     return <UserOrderTable/>;
