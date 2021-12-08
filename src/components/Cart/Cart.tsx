@@ -1,5 +1,5 @@
 import {RootState} from '@store';
-import {cartSlice} from '@store/slices/cart';
+import {CartItem, cartSlice} from '@store/slices/cart';
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Redirect} from 'react-router-dom';
@@ -22,6 +22,10 @@ export const Cart: React.FC = () => {
     if (finalizeOrder) {
         return <OrderMeta/>;
     }
+
+    const removeFromCart = (id: string) => {
+        dispatch(cartSlice.actions.removeFromCart(id));
+    };
 
     return (
         <div className={styles.Container}>
@@ -81,6 +85,7 @@ export const Cart: React.FC = () => {
                         <p className={styles.Item__pricePerItem}>
                             {product.price.rangeValue.value} {product.price.rangeValue.unit}
                         </p>
+                        <button onClick={ () => { removeFromCart(cartItem.product.id) } }> Удалить </button>
                     </div>
                 );
             })}
