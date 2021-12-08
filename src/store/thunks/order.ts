@@ -16,6 +16,9 @@ export const createOrder = createAsyncThunk('order/create', async (order: ReqCre
     window.alert("Успешно создано!")
     dispatch(getDocument(response.data.id));
     return response.data;
+  } else {
+    console.log(response)
+    window.alert("Ошибка!")
   }
 });
 

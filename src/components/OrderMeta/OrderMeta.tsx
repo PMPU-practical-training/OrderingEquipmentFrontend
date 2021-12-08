@@ -30,7 +30,7 @@ const Values = [
 export const OrderMeta: React.FC = () => {
   const { cart } = useSelector((state: RootState) => state.cart);
   const userData = useSelector((state: RootState) => state.user.data);
-  const [orderNumber, setOrderNumber] = useState('');
+  const [orderNumber, setOrderNumber] = useState('00-00-00-00');
   const [name, setName] = useState('');
   const [deadline, setDeadline] = useState('');
   const [deliveryAddress, setDeliveryAddress] = useState('');
@@ -65,7 +65,7 @@ export const OrderMeta: React.FC = () => {
     <div className={styles.Container}>
       <div className={styles.Title}>Оформление заявки</div>
       <div className={styles.Container__input}>
-        <div className={styles.Container__row}>
+        {/*<div className={styles.Container__row}>
           <span className={styles.Value}>НОМЕР ЗАКАЗА:</span>
           <Input
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setOrderNumber(e.target.value)}
@@ -75,7 +75,7 @@ export const OrderMeta: React.FC = () => {
             type="string"
             className={styles.Input}
           />
-        </div>
+        </div>*/}
         <div className={styles.Container__row}>
           <span className={styles.Value}>НАЗВАНИЕ ЗАКАЗА:</span>
           <Input
